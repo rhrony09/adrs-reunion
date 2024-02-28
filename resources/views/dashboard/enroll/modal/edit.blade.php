@@ -10,29 +10,29 @@
         <input type="hidden" name="id" value="{{ $enroll->id }}">
         <div class="row">
             <div class="col-md-6">
-                <x-forms.text fieldId="name" fieldLabel="Name" fieldName="name" fieldValue="{{ $enroll->name }}" :fieldRequired="true"></x-forms.text>
+                <x-forms.Text fieldId="name" fieldLabel="Name" fieldName="name" fieldValue="{{ $enroll->name }}" :fieldRequired="true"></x-forms.Text>
             </div>
             <div class="col-md-6">
-                <x-forms.text fieldId="mobile" fieldLabel="Mobile" fieldName="mobile" fieldValue="{{ $enroll->mobile }}" :fieldRequired="true"></x-forms.text>
+                <x-forms.Text fieldId="mobile" fieldLabel="Mobile" fieldName="mobile" fieldValue="{{ $enroll->mobile }}" :fieldRequired="true"></x-forms.Text>
             </div>
             <div class="col-md-3">
-                <x-forms.select fieldId="batch_id" fieldLabel="Batch" fieldName="batch_id">
+                <x-forms.Select fieldId="batch_id" fieldLabel="Batch" fieldName="batch_id">
                     @foreach ($batches as $batch)
                         <option value="{{ $batch->id }}" {{ $batch->id == $enroll->batch_id ? 'selected' : '' }}>{{ $batch->batch }}</option>
                     @endforeach
-                </x-forms.select>
+                </x-forms.Select>
             </div>
             <div class="col-md-3">
-                <x-forms.select fieldId="payment_method" fieldLabel="Payment Method" fieldName="payment_method">
+                <x-forms.Select fieldId="payment_method" fieldLabel="Payment Method" fieldName="payment_method">
                     <option value="bkash" {{ $enroll->payment_method == 'bkash' ? 'selected' : '' }}>bkash</option>
                     <option value="offline" {{ $enroll->payment_method == 'offline' ? 'selected' : '' }}>offline</option>
-                </x-forms.select>
+                </x-forms.Select>
             </div>
             <div class="col-md-3">
-                <x-forms.text fieldId="amount" fieldLabel="Amount" fieldName="amount" fieldValue="{{ $enroll->amount }}"></x-forms.text>
+                <x-forms.Text fieldId="amount" fieldLabel="Amount" fieldName="amount" fieldValue="{{ $enroll->amount }}"></x-forms.Text>
             </div>
             <div class="col-md-3">
-                <x-forms.text fieldId="transaction" fieldLabel="Transaction No" fieldName="transaction" fieldValue="{{ $enroll->transaction }}"></x-forms.text>
+                <x-forms.Text fieldId="transaction" fieldLabel="Transaction No" fieldName="transaction" fieldValue="{{ $enroll->transaction }}"></x-forms.Text>
             </div>
         </div>
     </div>
