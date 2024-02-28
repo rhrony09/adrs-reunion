@@ -7,7 +7,7 @@
                 <img class="logo" src="{{ asset('uploads/images/ADRS-Icon.png') }}">
                 <div class="text-light">
                     <h3 class="m-0">আমারদেশ রেসিডেন্সিয়াল স্কুল</h3>
-                    <p class="m-0">মুক্তিনগর, সাঘাটা, গাইবান্ধা | স্থাপিত: ২০০৪</p>
+                    <p class="m-0">মুক্তিনগর, সাঘাটা, গাইবান্ধা | স্থাপিত: ২০০৪ ইং</p>
                 </div>
             </div>
             <div class="box">

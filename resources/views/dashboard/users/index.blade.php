@@ -43,12 +43,15 @@
                             <td>{{ $user->batch ? $user->batch->batch : '--' }}</td>
                             @if (auth()->user()->role_id == 1)
                                 <td>
-                                    <x-dropdown>
-                                        <x-dropdown-link icon="eye" link="{{ route('dashboard.users.show', $user->id) }}">Edit</x-dropdown-link>
-                                        @if (auth()->user()->id != $user->id)
-                                            <x-dropdown-button class="user-delete" icon="trash-can" data-id="{{ $user->id }}">Delete</x-dropdown-button>
-                                        @endif
-                                    </x-dropdown>
+                                    <div class="dropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{ route('dashboard.users.show', $user->id) }}" class='dropdown-item enroll-edit'><i class="fa fa-pencil-alt"></i> Edit</a></li>
+                                            <li><button class='dropdown-item user-delete' data-id="{{ $user->id }}"><i class="fa fa-trash"></i> Delete</button></li>
+                                        </ul>
+                                    </div>
                                 </td>
                             @endif
                         </tr>
