@@ -113,8 +113,8 @@
                                             <i class="fa-solid fa-ellipsis-vertical"></i>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><button class='dropdown-item enroll-edit' data-id="{{ $enroll->id }}"><i class="fa fa-pencil-alt"></i>Edit</button></li>
-                                            <li><button class='dropdown-item enroll-delete' data-id="{{ $enroll->id }}"><i class="fa fa-pencil-alt"></i>Delete</button></li>
+                                            <li><button class='dropdown-item enroll-edit' data-id="{{ $enroll->id }}"><i class="fa fa-pencil-alt"></i> Edit</button></li>
+                                            <li><button class='dropdown-item enroll-delete' data-id="{{ $enroll->id }}"><i class="fa fa-trash"></i> Delete</button></li>
                                         </ul>
                                     </div>
                                 </td>

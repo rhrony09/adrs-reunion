@@ -10,29 +10,35 @@
         <input type="hidden" name="id" value="{{ $enroll->id }}">
         <div class="row">
             <div class="col-md-6">
-                <x-forms.Text fieldId="name" fieldLabel="Name" fieldName="name" fieldValue="{{ $enroll->name }}" :fieldRequired="true"></x-forms.Text>
+                <label class="mb-1" for="name">Name</label>
+                <input type="text" class="form-control" value="{{ $enroll->name }}" name="name" id="name" required>
             </div>
             <div class="col-md-6">
-                <x-forms.Text fieldId="mobile" fieldLabel="Mobile" fieldName="mobile" fieldValue="{{ $enroll->mobile }}" :fieldRequired="true"></x-forms.Text>
+                <label class="mb-1" for="mobile">Mobile</label>
+                <input type="text" class="form-control" value="{{ $enroll->mobile }}" name="mobile" id="mobile" required>
             </div>
-            <div class="col-md-3">
-                <x-forms.Select fieldId="batch_id" fieldLabel="Batch" fieldName="batch_id">
+            <div class="col-md-3 mt-3">
+                <label class="mb-1" for="batch_id">Batch</label>
+                <select name="batch_id" id="batch_id" class="form-select">
                     @foreach ($batches as $batch)
                         <option value="{{ $batch->id }}" {{ $batch->id == $enroll->batch_id ? 'selected' : '' }}>{{ $batch->batch }}</option>
                     @endforeach
-                </x-forms.Select>
+                </select>
             </div>
-            <div class="col-md-3">
-                <x-forms.Select fieldId="payment_method" fieldLabel="Payment Method" fieldName="payment_method">
+            <div class="col-md-3 mt-3">
+                <label class="mb-1" for="payment_method">Payment Method</label>
+                <select name="payment_method" id="payment_method" class="form-select">
                     <option value="bkash" {{ $enroll->payment_method == 'bkash' ? 'selected' : '' }}>bkash</option>
                     <option value="offline" {{ $enroll->payment_method == 'offline' ? 'selected' : '' }}>offline</option>
-                </x-forms.Select>
+                </select>
             </div>
-            <div class="col-md-3">
-                <x-forms.Text fieldId="amount" fieldLabel="Amount" fieldName="amount" fieldValue="{{ $enroll->amount }}"></x-forms.Text>
+            <div class="col-md-3 mt-3">
+                <label class="mb-1" for="amount">Amount</label>
+                <input type="text" class="form-control" value="{{ $enroll->amount }}" name="amount" id="amount">
             </div>
-            <div class="col-md-3">
-                <x-forms.Text fieldId="transaction" fieldLabel="Transaction No" fieldName="transaction" fieldValue="{{ $enroll->transaction }}"></x-forms.Text>
+            <div class="col-md-3 mt-3">
+                <label class="mb-1" for="transaction">Transaction No</label>
+                <input type="text" class="form-control" value="{{ $enroll->transaction }}" name="transaction" id="transaction">
             </div>
         </div>
     </div>
