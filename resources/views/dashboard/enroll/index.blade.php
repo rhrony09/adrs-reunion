@@ -108,11 +108,15 @@
                             </td>
                             @if (in_array(auth()->user()->role_id, [1]))
                                 <td>
-                                    <x-Dropdown>
-                                        {{-- <li><button class='dropdown-item enroll-edit' data-id="{{ $enroll->id }}"><i class="fa fa-pencil-alt"></i>Edit</button></li> --}}
-                                        <x-dropdown-Button class="enroll-edit" icon="pencil-alt" data-id="{{ $enroll->id }}">Edit</x-dropdown-Button>
-                                        <x-dropdown-Button class="enroll-delete" icon="trash-can" data-id="{{ $enroll->id }}">Delete</x-dropdown-Button>
-                                    </x-Dropdown>
+                                    <div class="dropdown">
+                                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><button class='dropdown-item enroll-edit' data-id="{{ $enroll->id }}"><i class="fa fa-pencil-alt"></i>Edit</button></li>
+                                            <li><button class='dropdown-item enroll-delete' data-id="{{ $enroll->id }}"><i class="fa fa-pencil-alt"></i>Delete</button></li>
+                                        </ul>
+                                    </div>
                                 </td>
                             @endif
                         </tr>
