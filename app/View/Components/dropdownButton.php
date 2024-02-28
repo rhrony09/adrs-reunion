@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class dropdownButton extends Component {
+class DropdownButton extends Component {
 
     public $icon;
     public $id;

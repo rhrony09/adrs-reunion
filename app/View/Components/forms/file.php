@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class file extends Component {
+class File extends Component {
 
     public $fieldLabel;
     public $fieldValue;

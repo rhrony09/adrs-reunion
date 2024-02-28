@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class textareaQuill extends Component {
+class TextareaQuill extends Component {
 
     public $fieldLabel;
     public $fieldValue;
