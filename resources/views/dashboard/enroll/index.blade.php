@@ -109,8 +109,9 @@
                             @if (in_array(auth()->user()->role_id, [1]))
                                 <td>
                                     <x-dropdown>
-                                        <x-dropdownButton class="enroll-edit" icon="pencil-alt" data-id="{{ $enroll->id }}">Edit</x-dropdownButton>
-                                        <x-dropdownButton class="enroll-delete" icon="trash-can" data-id="{{ $enroll->id }}">Delete</x-dropdownButton>
+                                        {{-- <li><button class='dropdown-item enroll-edit' data-id="{{ $enroll->id }}"><i class="fa fa-pencil-alt"></i>Edit</button></li> --}}
+                                        <x-dropdown-button class="enroll-edit" icon="pencil-alt" data-id="{{ $enroll->id }}">Edit</x-dropdown-button>
+                                        <x-dropdown-button class="enroll-delete" icon="trash-can" data-id="{{ $enroll->id }}">Delete</x-dropdown-button>
                                     </x-dropdown>
                                 </td>
                             @endif

@@ -44,9 +44,9 @@
                             @if (auth()->user()->role_id == 1)
                                 <td>
                                     <x-dropdown>
-                                        <x-dropdownLink icon="eye" link="{{ route('dashboard.users.show', $user->id) }}">Edit</x-dropdownLink>
+                                        <x-dropdown-link icon="eye" link="{{ route('dashboard.users.show', $user->id) }}">Edit</x-dropdown-link>
                                         @if (auth()->user()->id != $user->id)
-                                            <x-dropdownButton class="user-delete" icon="trash-can" data-id="{{ $user->id }}">Delete</x-dropdownButton>
+                                            <x-dropdown-button class="user-delete" icon="trash-can" data-id="{{ $user->id }}">Delete</x-dropdown-button>
                                         @endif
                                     </x-dropdown>
                                 </td>
@@ -97,8 +97,8 @@
                             @if (in_array(auth()->user()->role_id, [1, 2]))
                                 <td>
                                     <x-dropdown>
-                                        <x-dropdownLink icon="eye" link="{{ route('dashboard.users.show', $user->id) }}">Edit</x-dropdownLink>
-                                        <x-dropdownButton class="user-delete" icon="trash-can" data-id="{{ $user->id }}">Delete</x-dropdownButton>
+                                        <x-dropdown-link icon="eye" link="{{ route('dashboard.users.show', $user->id) }}">Edit</x-dropdown-link>
+                                        <x-dropdown-button class="user-delete" icon="trash-can" data-id="{{ $user->id }}">Delete</x-dropdown-button>
                                     </x-dropdown>
                                 </td>
                             @endif
