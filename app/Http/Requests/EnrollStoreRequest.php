@@ -23,6 +23,7 @@ class EnrollStoreRequest extends FormRequest {
             'mobile' => 'required|regex:/(01)[0-9]{9}/|unique:enrolls,mobile',
             'batch' => 'required',
             'payment_method' => 'required',
+            'tshirt_size' => 'required',
         ];
         if (request()->payment_method == 'bkash') {
             $rules['transaction'] = 'required';
@@ -38,7 +39,8 @@ class EnrollStoreRequest extends FormRequest {
             'mobile.unique' => 'দুঃখিত, মোবাইল নাম্বারটি ইতিমধ্যে ব্যবহার করা হয়েছে',
             'batch.required' => 'অনুগ্রহ করে আপনার ব্যাচ সিলেক্ট করুন',
             'payment_method.required' => 'অনুগ্রহ করে পেমেন্ট মেথড সিলেক্ট করুন',
-            'transaction.required' => 'অনুগ্রহ করে বিকাশ অথবা ট্রানজেকশন নম্বর লিখুন'
+            'transaction.required' => 'অনুগ্রহ করে বিকাশ অথবা ট্রানজেকশন নম্বর লিখুন',
+            'tshirt_size.required' => 'অনুগ্রহ করে টি-শার্ট সাইজ সিলেক্ট করুন',
         ];
     }
 }

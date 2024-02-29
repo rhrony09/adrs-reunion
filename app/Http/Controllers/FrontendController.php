@@ -32,7 +32,10 @@ class FrontendController extends Controller {
             'batch_id' => $request->batch,
             'payment_method' => $request->payment_method,
             'transaction' => $request->transaction,
+            'tshirt_size' => $request->tshirt_size,
+            'guest' => $request->guest,
             'token' => $token,
+            'amount' => $request->amount,
         ]);
 
         $message = 'অভিনন্দন, রেজিস্ট্রেশন সফল হয়েছে। আপনার টোকেন নং: ' . intEngToBn($token) . '
@@ -46,10 +49,10 @@ class FrontendController extends Controller {
         Mail::to('rhrony0009@gmail.com')->send(new NewEnroll($enroll));
         dispatch(new SMSNotification($smsdata));
 
-        session()->flash('success', 'রেজিস্ট্রেশন সফল হয়েছে');
-
         return response()->json([
             'success' => true,
+            'message' => 'রেজিস্ট্রেশন সফল হয়েছে',
+            'data' => 'অভিনন্দন, রেজিস্ট্রেশন সফল হয়েছে। আপনার টোকেন নং: ' . intEngToBn($token),
         ]);
     }
 }

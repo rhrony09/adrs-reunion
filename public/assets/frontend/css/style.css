@@ -8,11 +8,12 @@ body {
 .container {
     position: relative;
     max-width: 1000px;
-    padding-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .card {
-    min-height: 80vh;
+    /* min-height: 80vh; */
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
 }
@@ -79,6 +80,10 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+.form-select {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
 .form-control:focus {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -92,14 +97,45 @@ form#register ul {
     font-size: 16px;
 }
 
+form#register ul .btn {
+    border: none;
+    margin-left: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .card-footer {
     text-align: center;
 }
 
-#qrModal,
+.modal,
 .card-footer span,
 .swal2-popup {
     font-family: SolaimanLipi, "Siyam Rupali", Vrinda;
+}
+
+.total-amount span {
+    font-weight: 800;
+}
+
+@media only screen and (min-width: 1600px) {
+    .container {
+        padding-top: 70px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .container {
+        padding-top: 100px;
+    }
 }
 
 @media only screen and (max-width: 600px) {

@@ -39,6 +39,8 @@ class DashboardController extends Controller {
         $enroll->payment_method = $request->payment_method;
         $enroll->transaction = $request->transaction;
         $enroll->amount = $request->amount;
+        $enroll->tshirt_size = $request->tshirt_size;
+        $enroll->guest = $request->guest;
         $enroll->save();
         session()->flash('success', 'Updated successfully.');
 

@@ -16,48 +16,71 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <div class="card overflow-hidden rounded-4">
                 <div class="card-body p-2">
                     <div class="rounded-4 overflow-hidden bg-primary">
                         <div class="p-3 d-flex justify-content-between align-items-center">
-                            <p class="text-white m-0">Total Registration</p>
+                            <p class="text-white m-0">Registration</p>
                             <h4 class="text-white m-0">{{ $enrolls->count() }}</h4>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <div class="card overflow-hidden rounded-4">
                 <div class="card-body p-2">
                     <div class="rounded-4 overflow-hidden bg-pink">
                         <div class="p-3 d-flex justify-content-between align-items-center">
-                            <p class="text-white m-0">bkash Payment</p>
+                            <p class="text-white m-0">Bkash Pay</p>
                             <h4 class="text-white m-0">{{ $enrolls->where('payment_method', 'bkash')->count() }}</h4>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <div class="card overflow-hidden rounded-4">
                 <div class="card-body p-2">
-                    <div class="rounded-4 overflow-hidden bg-purple">
+                    <div class="rounded-4 overflow-hidden bg-orange">
                         <div class="p-3 d-flex justify-content-between align-items-center">
-                            <p class="text-white m-0">Offline Payment</p>
+                            <p class="text-white m-0">Nagad Pay</p>
                             <h4 class="text-white m-0">{{ $enrolls->where('payment_method', 'offline')->count() }}</h4>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-2">
+            <div class="card overflow-hidden rounded-4">
+                <div class="card-body p-2">
+                    <div class="rounded-4 overflow-hidden bg-purple">
+                        <div class="p-3 d-flex justify-content-between align-items-center">
+                            <p class="text-white m-0">Rocket Pay</p>
+                            <h4 class="text-white m-0">{{ $enrolls->where('payment_method', 'offline')->count() }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="card overflow-hidden rounded-4">
+                <div class="card-body p-2">
+                    <div class="rounded-4 overflow-hidden bg-dark">
+                        <div class="p-3 d-flex justify-content-between align-items-center">
+                            <p class="text-white m-0">Offline Pay</p>
+                            <h4 class="text-white m-0">{{ $enrolls->where('payment_method', 'offline')->count() }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
             <div class="card overflow-hidden rounded-4">
                 <div class="card-body p-2">
                     <div class="rounded-4 overflow-hidden bg-success">
-                        <div class="p-3 d-flex justify-content-between align-items-center">
-                            <p class="text-white m-0">Total Received</p>
+                        <div class="p-3 d-flex justify-content-center align-items-center">
                             <h4 class="text-white m-0">{{ moneyFormatBD($enrolls->sum('amount')) }} <small>TK</small></h4>
                         </div>
                     </div>
@@ -78,7 +101,9 @@
                         <th>Name</th>
                         <th class="text-center">Mobile</th>
                         <th class="text-center">Batch</th>
-                        <th class="text-center">Payment Method</th>
+                        <th class="text-center">T-Shirt</th>
+                        <th class="text-center">Guest</th>
+                        <th class="text-center">Payment</th>
                         <th class="text-center">Token</th>
                         <th class="text-center">Amount</th>
                         <th class="text-center">Registred On</th>
@@ -94,8 +119,10 @@
                             <td class="text-start">{{ $enroll->name }}</td>
                             <td>{{ $enroll->mobile }}</td>
                             <td>{{ $enroll->batch ? $enroll->batch->batch : '--' }}</td>
+                            <td>{{ $enroll->tshirt_size }}</td>
+                            <td>{{ $enroll->guest }}</td>
                             <td>
-                                {{ $enroll->payment_method }}
+                                {{ ucwords($enroll->payment_method) }}
                                 @if ($enroll->transaction)
                                     <p class="m-0 f-10">{{ $enroll->transaction }}</p>
                                 @endif

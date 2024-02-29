@@ -14,8 +14,10 @@ return new class extends Migration {
             $table->string('name');
             $table->string('mobile');
             $table->foreignId('batch_id')->constrained();
-            $table->enum('payment_method', ['bkash', 'offline']);
+            $table->enum('payment_method', ['bkash', 'nagad', 'rocket', 'offline']);
             $table->string('transaction')->nullable();
+            $table->enum('tshirt_size', ['S', 'M', 'L', 'XL', 'XXL'])->nullable();
+            $table->integer('guest')->nullable();
             $table->string('token')->nullable();
             $table->integer('amount')->nullable();
             $table->timestamps();
