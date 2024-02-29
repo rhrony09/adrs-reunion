@@ -46,7 +46,7 @@
                     <div class="rounded-4 overflow-hidden bg-orange">
                         <div class="p-3 d-flex justify-content-between align-items-center">
                             <p class="text-white m-0">Nagad Pay</p>
-                            <h4 class="text-white m-0">{{ $enrolls->where('payment_method', 'offline')->count() }}</h4>
+                            <h4 class="text-white m-0">{{ $enrolls->where('payment_method', 'nagad')->count() }}</h4>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                     <div class="rounded-4 overflow-hidden bg-purple">
                         <div class="p-3 d-flex justify-content-between align-items-center">
                             <p class="text-white m-0">Rocket Pay</p>
-                            <h4 class="text-white m-0">{{ $enrolls->where('payment_method', 'offline')->count() }}</h4>
+                            <h4 class="text-white m-0">{{ $enrolls->where('payment_method', 'rocket')->count() }}</h4>
                         </div>
                     </div>
                 </div>
