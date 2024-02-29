@@ -119,8 +119,8 @@
                             <td class="text-start">{{ $enroll->name }}</td>
                             <td>{{ $enroll->mobile }}</td>
                             <td>{{ $enroll->batch ? $enroll->batch->batch : '--' }}</td>
-                            <td>{{ $enroll->tshirt_size }}</td>
-                            <td>{{ $enroll->guest }}</td>
+                            <td>{{ $enroll->tshirt_size ?? '--' }}</td>
+                            <td>{{ $enroll->guest ?? '--' }}</td>
                             <td>
                                 {{ ucwords($enroll->payment_method) }}
                                 @if ($enroll->transaction)
