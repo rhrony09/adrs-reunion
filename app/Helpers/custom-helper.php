@@ -5,7 +5,7 @@ use App\Models\Setting;
 
 function send_sms($msg, $number) {
     if (preg_match('/^([01]\d|2[0-4]|30)/', $number)) {
-        $url = "http://188.166.227.8/smsapi";
+        $url = "https://sms.imbdagency.com/smsapi";
         $data = [
             "api_key" => env('SMS_API_KEY'),
             "type" => "unicode",
