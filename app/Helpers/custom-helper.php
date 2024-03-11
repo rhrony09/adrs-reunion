@@ -2,6 +2,7 @@
 
 use App\Models\Enroll;
 use App\Models\Setting;
+use Illuminate\Support\Facades\Log;
 
 function send_sms($msg, $number) {
     if (preg_match('/^([01]\d|2[0-4]|30)/', $number)) {
@@ -10,7 +11,7 @@ function send_sms($msg, $number) {
             "api_key" => env('SMS_API_KEY'),
             "type" => "unicode",
             "contacts" => $number,
-            "senderid" => '8809601000500',
+            "senderid" => env('SMS_SENDER_ID'),
             "msg" => $msg,
         ];
         $ch = curl_init();
